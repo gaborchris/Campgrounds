@@ -1,0 +1,77 @@
+body {
+    background-color: black;
+}
+
+#landing-header {
+    z-index: 1;
+    position: relative;
+    text-align: center;
+    padding-top: 40vh;
+    color: white;
+}
+
+.slideshow {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.slideshow li {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    z-index: 0;
+    animation: imageAnimation 25s linear infinite;
+}
+
+.slideshow li:nth-child(1) {
+    background-image: url(https://images.unsplash.com/photo-1497250681960-ef046c08a56e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1600&q=60);
+}
+.slideshow li:nth-child(2) {
+    background-image: url(https://images.unsplash.com/photo-1527008527515-d18557de1589?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    animation-delay: 5s;
+}
+.slideshow li:nth-child(3) {
+    background-image: url(https://images.unsplash.com/photo-1512102935621-443f9165ad73?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    animation-delay: 10s;
+}
+.slideshow li:nth-child(4) {
+    background-image: url(https://images.unsplash.com/photo-1549915362-eb1ca88a057a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    animation-delay: 15s;
+}
+.slideshow li:nth-child(5) {
+    background-image: url(https://images.unsplash.com/photo-1568056716952-8fbb31609e20?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60);
+    animation-delay: 20s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+    }
+    10% {
+        opacity: 1;
+        animation-timing-function: ease-out;
+    }
+    20% {
+        opacity: 1;
+    }
+    30% {
+        opacity: 0;
+    }
+}
+
+.no-cssanimations .slideshow li {
+    opacity: 1;
+}
