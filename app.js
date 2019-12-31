@@ -59,5 +59,5 @@ app.use(authRoutes);
 app.use(indexRoutes);
 
 app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Server is running now");
+    console.log("Server is running");
 });
