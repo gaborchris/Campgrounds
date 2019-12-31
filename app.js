@@ -10,6 +10,7 @@ Campground = require('./models/campground'),
 Comment = require("./models/comment"),
 User = require("./models/user"),
 Seed = require("./seeds");
+require('dotenv').config();
 
 app.use(require('express-session')({
     secret: "Kona is the best dog and we love her!",
@@ -35,8 +36,14 @@ app.use(function(req, res, next){
 
 // Seed();
 
-mongoose.connect("mongodb://localhost/yelp_camp", 
-    {useUnifiedTopology: true, useNewUrlParser: true});
+var mongo_url = process.env.MONGOATLAS_URI;
+mongoose.connect(mongo_url, 
+    {useUnifiedTopology: true, useNewUrlParser: true}, function(err){
+        if(err){console.log(err.message)}
+        else{
+        console.log("Connected to DB");
+        }
+    });
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
