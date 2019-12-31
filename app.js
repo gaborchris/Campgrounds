@@ -51,6 +51,6 @@ app.use("/campgrounds", campgroundRoutes);
 app.use(authRoutes);
 app.use(indexRoutes);
 
-app.listen(8888, function(){
+app.listen(process.env.PORT, process.env.IP, function(){
     console.log("Server is running now");
 });
